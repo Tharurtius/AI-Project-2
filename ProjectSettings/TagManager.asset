@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Patrol
   - Key
+  - Door
+  - GiveQuest
   layers:
   - Default
   - TransparentFX
