@@ -11,7 +11,7 @@ public class HumanAI : AIMovement
         m_Agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         index = 0;
-        m_Agent.SetDestination(waypoints[0].transform.position);
+        m_Agent.SetDestination(waypoints[0].transform.position);//the epic journey of erica who lost her house keys
     }
 
     // Update is called once per frame
@@ -32,12 +32,13 @@ public class HumanAI : AIMovement
             {
                 GameManager.OpenDoor();
             }
+
             if (waypoints[0].tag == "GiveQuest")//give quest to dryad
             {
                 GameManager.gateQuest = true;
-                waypoints[0].tag = "Patrol";//not GiveQuest
+                waypoints[0].tag = "Patrol";//change tag, will remove waypoint later
             }
-            else
+            else//remove waypoints and move to next one
             {
                 waypoints[0].SetActive(false);
                 waypoints.Remove(waypoints[0]);

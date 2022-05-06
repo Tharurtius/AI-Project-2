@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         gate.SetActive(false);
         gateQuest = false;
     }
-    static public void OpenDoor()
+    static public void OpenDoor() //opens doors in a set order
     {
         houseDoors[0].SetActive(false);
         houseDoors.Remove(houseDoors[0]);

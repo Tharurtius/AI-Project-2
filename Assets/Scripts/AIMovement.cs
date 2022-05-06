@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class AIMovement : MonoBehaviour
 {
+    #region Variables
     [Header("Components")]
     [SerializeField] protected NavMeshAgent m_Agent;
     [SerializeField] protected Animator animator;
@@ -13,7 +14,8 @@ public class AIMovement : MonoBehaviour
     [SerializeField] protected List<GameObject> waypoints;
     [SerializeField] protected GameObject[] patrol;
     [SerializeField] protected bool hasKey;
-
+    #endregion
+    #region Functions
     //because .remainingDistance and .pathStatus doesnt work with height
     protected float AIDistance(GameObject agent, GameObject target)
     {
@@ -32,7 +34,7 @@ public class AIMovement : MonoBehaviour
         }
         m_Agent.SetDestination(patrol[index].transform.position);
     }
-    //every agent has this same code
+    //every agent uses this to update their animations
     protected void CheckAnim(NavMeshAgent agent)
     {
         //if walking, set animator to walk
@@ -51,6 +53,7 @@ public class AIMovement : MonoBehaviour
         float value = Mathf.Abs(agent.velocity.x) + Mathf.Abs(agent.velocity.y);
         return value;
     }
+    #endregion
     #region Test stuff
     /*
     void Start()

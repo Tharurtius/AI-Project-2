@@ -36,9 +36,9 @@ public class FrogmanAI : AIMovement
                 m_Agent.SetDestination(waypoints[0].transform.position);
             }
         }
-        else if (GameManager.frogDoor.activeSelf == false && !_goneFishing)
+        else if (GameManager.frogDoor.activeSelf == false && !_goneFishing)//once house is unlocked
         {
-            _goneFishing = true;
+            _goneFishing = true;//go fishing
             m_Agent.SetDestination(waypoints[0].transform.position);
         }
         CheckAnim(m_Agent);
